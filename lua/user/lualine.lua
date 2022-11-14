@@ -10,8 +10,8 @@ end
 local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
-  sections = { "error", "warn" },
-  symbols = { error = " ", warn = " " },
+  sections = { "error", "warn", "hint" },
+  symbols = { error = " ", warn = " ", hint = " " },
   colored = false,
   always_visible = true,
 }
@@ -55,4 +55,12 @@ lualine.setup {
     lualine_y = { location },
     lualine_z = { "progress" },
   },
+  -- winbar = {
+  --   lualine_a = {},
+  --   lualine_b = {},
+  --   lualine_c = { "filename" },
+  --   lualine_x = {},
+  --   lualine_y = {},
+  --   lualine_z = {},
+  -- }
 }
