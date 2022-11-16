@@ -61,8 +61,8 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
-keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
+keymap("n", "<leader>fr", ":Telescope coc references<CR>", opts)
+keymap("n", "gd", ":Telescope coc definitions<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)

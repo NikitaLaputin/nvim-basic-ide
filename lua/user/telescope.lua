@@ -61,6 +61,9 @@ telescope.setup {
           },
         },
       },
+      coc = {
+        prefer_locations = true
+      }
     },
   },
 }
