@@ -91,9 +91,8 @@ keymap("n", "<leader>fw", ":lua require('telescope-live-grep-args.shortcuts').gr
 keymap("n", "<leader>fp", ":Telescope pickers<CR>", opts)
 keymap("n", "<leader>fl", ":Telescope resume<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
-keymap("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>", opts)
-keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
+keymap("n", "<leader>fr", ":Telescope coc references<CR>", opts)
+keymap("n", "gd", ":Telescope coc definitions<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)

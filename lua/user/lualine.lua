@@ -10,11 +10,12 @@ local hide_in_width = function()
 end
 
 local diagnostics = {
-	"diagnostics",
-	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "hint" },
-	colored = false,
-	always_visible = true,
+  "diagnostics",
+  sources = { "coc" },
+  sections = { "error", "warn", "hint" },
+  symbols = { error = " ", warn = " ", hint = " " },
+  colored = false,
+  always_visible = true,
 }
 
 local diff = {

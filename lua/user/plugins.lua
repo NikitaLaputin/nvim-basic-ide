@@ -68,44 +68,40 @@ return packer.startup(function(use)
 	use({ "navarasu/onedark.nvim" })
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
-	-- cmp plugins
-	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-	use({ "hrsh7th/cmp-path" }) -- path completions
-	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-	use({ "hrsh7th/cmp-nvim-lsp" })
-	use({ "hrsh7th/cmp-nvim-lua" })
-	-- snippets
-	use({ "L3MON4D3/LuaSnip" }) --snippet engine
-	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
+  -- cmp plugins
+  -- use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
+  -- use { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" } -- buffer completions
+  -- use { "hrsh7th/cmp-path", commit = "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1" } -- path completions
+  -- use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
+  -- use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
+  -- use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
 
-	-- LSP
-	use({ "neovim/nvim-lspconfig" }) -- enable LSP
-	use({ "williamboman/mason.nvim" })
-	use({ "williamboman/mason-lspconfig.nvim" })
-	use({ "stevearc/conform.nvim" }) -- for formatters
-	use({ "RRethy/vim-illuminate" })
-	use({ "yioneko/nvim-vtsls" })
+  -- snippets
+  -- use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine
+  -- use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
 
-	-- Telescope
-	use({
-		"nvim-telescope/telescope.nvim",
-		requires = {
-			{ "nvim-telescope/telescope-live-grep-args.nvim" },
-		},
-		config = function()
-			require("telescope").load_extension("live_grep_args")
-			require("telescope").load_extension("fzf")
-		end,
-	})
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+  -- LSP
+  -- use { "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" } -- enable LSP
+  -- use { "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12"}
+  -- use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" }
+  -- use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
+  -- use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
+ 
+    -- CoC
+  use { "neoclide/coc.nvim", branch = "release" }
 
-	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-	})
-	use({ "nvim-treesitter/playground" })
-	use({ "nvim-treesitter/nvim-treesitter-context" })
+  -- Telescope
+  use {
+  "nvim-telescope/telescope.nvim",
+  requires = {
+    { "nvim-telescope/telescope-live-grep-args.nvim" },
+    { "fannheyward/telescope-coc.nvim" }
+  },
+  config = function()
+    require("telescope").load_extension("live_grep_args")
+    require("telescope").load_extension("coc")
+  end
+}
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
