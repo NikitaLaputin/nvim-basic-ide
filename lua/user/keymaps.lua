@@ -2,7 +2,7 @@
 local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
-opts = {silent = false }
+opts = { silent = false }
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -51,6 +51,27 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Other
+keymap("n", "U", "<C-r>", opts)
+
+-- Surround with quotes and parenthesis
+keymap("n", "<leader>'", "viw\"zc'<ESC>\"zpa'<ESC>h", opts)
+keymap("n", '<leader>"', 'viw"zc"<ESC>"zpa"<ESC>h', opts)
+keymap("n", "<leader>(", 'viw"zc(<ESC>"zpa)<ESC>h', opts)
+keymap("n", "<leader>)", 'viw"zc(<ESC>"zpa)<ESC>h', opts)
+keymap("n", "<leader>{", 'viw"zc{<ESC>"zpa}<ESC>h', opts)
+keymap("n", "<leader>}", 'viw"zc{<ESC>"zpa}<ESC>h', opts)
+keymap("n", "<leader>[", 'viw"zc[<ESC>"zpa]<ESC>h', opts)
+keymap("n", "<leader>]", 'viw"zc[<ESC>"zpa]<ESC>h', opts)
+keymap("v", "'", "\"zc'<ESC>\"zpgv<ESC>a'<ESC>gvolol", opts)
+keymap("v", '"', '"zc"<ESC>"zpgv<ESC>a"<ESC>gvolol', opts)
+keymap("v", "<leader>(", '"zc(<ESC>"zpgv<ESC>a)<ESC>gvolol', opts)
+keymap("v", "<leader>)", '"zc(<ESC>"zpgv<ESC>a)<ESC>gvolol', opts)
+keymap("v", "<leader>{", '"zc{<ESC>"zpgv<ESC>a}<ESC>gvolol', opts)
+keymap("v", "<leader>}", '"zc{<ESC>"zpgv<ESC>a}<ESC>gvolol', opts)
+keymap("v", "<leader>[", '"zc[<ESC>"zpgv<ESC>a]<ESC>gvolol', opts)
+keymap("v", "<leader>]", '"zc[<ESC>"zpgv<ESC>a]<ESC>gvolol', opts)
+
 -- Plugins --
 
 -- NvimTree
@@ -86,8 +107,10 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- LSP
 keymap("n", "<leader>jf", "<cmd>lua vim.diagnostic.open_float()<CR>")
 keymap("n", "<leader>jd", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-keymap("n", "<leader>jr", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>")
-keymap("n", "<leader>je", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>")
+keymap("n", "<leader>n", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>", opts)
+keymap("n", "<leader>p", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>", opts)
+keymap("n", "gN", "<cmd>lua vim.diagnostic.goto_next({severity = { max = vim.diagnostic.severity.WARN}})<CR>", opts)
+keymap("n", "gP", "<cmd>lua vim.diagnostic.goto_prev({severity = { max = vim.diagnostic.severity.WARN}})<CR>", opts)
 
 -- Config reload
 keymap("n", "<leader>cr", "<cmd>lua ReloadConfig()<CR>", { noremap = true, silent = false })
