@@ -34,7 +34,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<leader>h", "<cmd>noh<CR>", opts)
 
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
@@ -72,7 +72,9 @@ keymap("v", "<leader>}", '"zc{<ESC>"zpgv<ESC>a}<ESC>gvolol', opts)
 keymap("v", "<leader>[", '"zc[<ESC>"zpgv<ESC>a]<ESC>gvolol', opts)
 keymap("v", "<leader>]", '"zc[<ESC>"zpgv<ESC>a]<ESC>gvolol', opts)
 
+-------------
 -- Plugins --
+-------------
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
@@ -80,7 +82,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+keymap("n", "<leader>fp", ":Telescope pickers<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
@@ -88,6 +90,7 @@ keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>gz", "<cmd>:Gitsigns reset_hunk<CR>")
+keymap("n", "<leader>ga", "<cmd>:Gitsigns toggle_current_line_blame<CR>")
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
