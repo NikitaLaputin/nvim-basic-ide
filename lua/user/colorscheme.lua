@@ -1,66 +1,129 @@
 local colors = {
-    black = '#000000',
-    blue = '#0033B3',
-    sky = '#1750EB',
-    green = '#067D17',
-    purple = '#871094',
-    gray = '#8C8C8C',
-    gold = '#7A7A43',
-    teal = '#248F8F',
-    turquoise = '#20999D',
+	black = "#000000",
+	blue = "#0033B3",
+	bog = "#00627A",
+	dark_gray = "#767A8A",
+    dust = '#8C8C8C',
+	gray = "#AEB3C2",
+	green = "#067D17",
+	gold = "#7A7A43",
+	mint = "#F5F8FE",
+	pale_blue = "#EDEBFC",
+	pale_teal = "#248F8F",
+	pink = "#FCE8F4",
+	purple = "#871094",
+    red = '#FF0000',
+	sky = "#1750EB",
+	teal = "#93D9D9",
+	turquoise = "#20999D",
 }
 
 local highlightGroups = {
-    ["@keyword"] = { fg = colors.blue }
+	["@attribute"] = { fg = colors.black },
+	["@boolean"] = { fg = colors.blue },
+	["@constant"] = { fg = colors.purple },
+	["@constructor"] = { fg = colors.blue },
+	["@constructor.lua"] = { fg = colors.black },
+	["@constructor.typescript"] = { fg = colors.blue },
+	["@constant.builtin"] = { fg = colors.blue },
+	["@conditional"] = { fg = colors.blue, italic = false },
+	["@exception"] = { fg = colors.blue },
+	["@include"] = { fg = colors.blue },
+	["@function"] = { fg = colors.black, italic = true },
+	["@keyword"] = { fg = colors.blue },
+	["@keyword.export"] = { fg = colors.blue },
+	["@keyword.function"] = { fg = colors.blue },
+	["@keyword.return"] = { fg = colors.blue },
+	["@keyword.operator"] = { fg = colors.blue },
+	["@method"] = { fg = colors.gold },
+	["@method.call"] = { fg = colors.gold },
+	["@number"] = { fg = colors.sky },
+	["@punctuation.special"] = { fg = colors.black },
+	["@type"] = { fg = colors.black },
+	["@type.builtin"] = { fg = colors.blue },
+	["@type.qualifier"] = { fg = colors.blue },
+	["@lsp.type.class"] = { fg = colors.black },
+	["@lsp.type.enumMember"] = { fg = colors.purple, italic = true },
+	["@lsp.type.function"] = { fg = colors.black, italic = true },
+	["@lsp.type.interface"] = { fg = colors.black },
+	["@lsp.type.method"] = { fg = colors.gold, nocombine = false },
+	["@lsp.type.namespace"] = { fg = colors.black, nocombine = false },
+	["@lsp.type.type"] = { fg = colors.black },
+	["@lsp.type.parameter"] = { fg = colors.black, nocombine = false, underline = true },
+	["@lsp.type.typeParameter"] = { fg = colors.pale_teal },
+	["@lsp.type.variable"] = { fg = colors.pale_teal },
+	["@lsp.typemod.defaultLibrary"] = { fg = colors.black },
+	["@lsp.typemod.class.defaultLibrary"] = { fg = colors.purple },
+	["@lsp.typemod.function.local"] = { fg = colors.bog, nocombine = true },
+	["@punctuation.bracket"] = { fg = colors.black },
+	["@function.builtin"] = { fg = colors.purple },
+	["@function.call"] = { fg = colors.black, nocombine = true },
+	["@parameter"] = { fg = colors.black, underline = true, nocombine = false },
+	["@parameter.typescript"] = { fg = colors.black, underline = true, nocombine = false },
+	["@property"] = { fg = colors.purple },
+	["@operator"] = { fg = colors.black },
+	["@variable"] = { fg = colors.black },
+	["@variable.builtin"] = { fg = colors.blue },
+    Comment = { fg = colors.dust, italic = true },
+	CursorLine = { bg = colors.mint },
+	CursorLineNr = { fg = colors.dark_gray },
+	CurSearch = { bg = colors.pale_blue, fg = "none" },
+	DiagnosticUnderlineError = { undercurl = true },
+	LineNr = { fg = colors.gray },
+	LspReferenceRead = { bg = colors.pale_blue },
+	LspReferenceText = { bg = colors.pale_blue },
+	LspReferenceWrite = { bg = colors.pink },
+	MatchParen = { bg = colors.teal, fg = colors.black },
+	Search = { bg = colors.pale_blue },
 }
 
 require("catppuccin").setup({
-    flavour = "latte", -- latte, frappe, macchiato, mocha
-    background = { -- :h background
-        light = "latte",
-        dark = "mocha",
-    },
-    transparent_background = false,
-    term_colors = false,
-    dim_inactive = {
-        enabled = false,
-        shade = "dark",
-        percentage = 0.15,
-    },
-    no_italic = false, -- Force no italic
-    no_bold = true, -- Force no bold
-    styles = {
-        comments = { "italic" },
-        conditionals = { "italic" },
-        loops = {},
-        functions = {},
-        keywords = {},
-        strings = {},
-        variables = {},
-        numbers = {},
-        booleans = {},
-        properties = {},
-        types = {},
-        operators = {},
-    },
-    color_overrides = {
-        latte = {
-            base = "#ffffff"
-        }
-    },
-    custom_highlights = highlightGroups,
-    integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        telescope = true,
-        notify = false,
-        mini = false,
-        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-    },
+	flavour = "latte", -- latte, frappe, macchiato, mocha
+	background = { -- :h background
+		light = "latte",
+		dark = "mocha",
+	},
+	transparent_background = false,
+	term_colors = false,
+	dim_inactive = {
+		enabled = false,
+		shade = "dark",
+		percentage = 0.15,
+	},
+	no_italic = false, -- Force no italic
+	no_bold = true, -- Force no bold
+	styles = {
+		comments = { "italic" },
+		conditionals = { "italic" },
+		loops = {},
+		functions = {},
+		keywords = {},
+		strings = {},
+		variables = {},
+		numbers = {},
+		booleans = {},
+		properties = {},
+		types = {},
+		operators = {},
+	},
+	color_overrides = {
+		latte = {
+			base = "#ffffff",
+		},
+	},
+	custom_highlights = highlightGroups,
+	integrations = {
+		cmp = true,
+		gitsigns = true,
+		nvimtree = true,
+		telescope = true,
+		notify = false,
+		mini = false,
+		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+	},
 })
 
 -- require("catppuccin.lib.highlighter").syntax(highlightGroups)
 
 -- setup must be called before loading
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme("catppuccin")
