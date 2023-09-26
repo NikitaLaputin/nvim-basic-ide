@@ -82,6 +82,8 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+keymap("v", "<leader>ft", ":lua require('telescope-live-grep-args.shortcuts').grep_visual_selection()<CR>")
+keymap("n", "<leader>fw", ":lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<CR>")
 keymap("n", "<leader>fp", ":Telescope pickers<CR>", opts)
 keymap("n", "<leader>ls", ":Telescope resume<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
@@ -91,7 +93,10 @@ keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>gz", "<cmd>:Gitsigns reset_hunk<CR>")
+keymap("n", "<leader>gn", "<cmd>:Gitsigns next_hunk<CR>")
+keymap("n", "<leader>gp", "<cmd>:Gitsigns prev_hunk<CR>")
 keymap("n", "<leader>ga", "<cmd>:Gitsigns toggle_current_line_blame<CR>")
+keymap("n", "<leader>gh", "<cmd>:Gitsigns diffthis<CR>")
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
