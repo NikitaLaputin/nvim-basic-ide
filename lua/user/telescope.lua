@@ -34,9 +34,12 @@ telescope.setup({
 			vertical = {
 				mirror = false,
 			},
-			width = 0.87,
+			center = {
+				width = 0.7,
+			},
+			width = 0.9,
 			height = 0.80,
-			preview_cutoff = 120,
+			preview_cutoff = 0,
 		},
 		file_sorter = require("telescope.sorters").get_fuzzy_file,
 		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
@@ -49,22 +52,21 @@ telescope.setup({
 		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-		file_ignore_patterns = { ".git/", "node_modules", ".idea", ".vscode", ".fleet" },
+		file_ignore_patterns = { ".git/", "node_modules", ".idea", ".vscode", ".fleet", "target" },
 		extensions = {
 			live_grep_args = {
 				auto_quoting = true, -- enable/disable auto-quoting
-				-- define mappings, e.g.
-				mappings = { -- extend mappings
+				mappings = {
 					i = {
-						["<C-k>"] = lga_actions.quote_prompt(),
-						["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob *.ts*" }),
+						-- TODO fix keymap
+						["<C-k>"] = lga_actions.quote_prompt({ postfix = " -g *.ts*" }),
 					},
 				},
 			},
 			fzf = {
 				fuzzy = true, -- false will only do exact matching
 				override_generic_sorter = true, -- override the generic sorter
-				override_file_sorter = false, -- override the file sorter
+				override_file_sorter = true, -- override the file sorter
 				case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 				-- the default case_mode is "smart_case"
 			},
@@ -72,7 +74,7 @@ telescope.setup({
 	},
 	pickers = {
 		find_files = {
-			theme = "dropdown",
+			-- theme = "dropdown",
 		},
 		live_grep = {
 			theme = "dropdown",
