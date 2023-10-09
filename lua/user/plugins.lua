@@ -66,6 +66,7 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim" })
 	-- use { 'sindrets/diffview.nvim' } -- Diff viewer
 	use({ "gpanders/editorconfig.nvim" })
+	use({ "folke/zen-mode.nvim" })
 
 	-- Colorschemes
 	use({ "projekt0n/github-nvim-theme" })
