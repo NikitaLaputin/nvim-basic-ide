@@ -7,6 +7,7 @@ local colors = {
 	gray = "#AEB3C2",
 	green = "#067D17",
 	gold = "#7A7A43",
+	light_gray = "#F7F8FA",
 	mint = "#F5F8FE",
 	pale_blue = "#EDEBFC",
 	pale_teal = "#248F8F",
@@ -50,11 +51,11 @@ local highlightGroups = {
 	["@lsp.type.parameter"] = { fg = colors.black, nocombine = false, underline = true },
 	["@lsp.type.type"] = { fg = colors.black },
 	["@lsp.type.typeParameter"] = { fg = colors.pale_teal },
-	["@lsp.type.variable"] = { fg = colors.pale_teal, nocombine = true },
 	["@lsp.typemod.defaultLibrary"] = { fg = colors.black },
 	["@lsp.typemod.class.defaultLibrary"] = { fg = colors.purple },
 	["@lsp.typemod.function.local"] = { fg = colors.bog, nocombine = true },
 	["@lsp.typemod.type.defaultLibrary"] = { fg = colors.black },
+	["@lsp.typemod.variable.defaultLibrary"] = { fg = colors.purple },
 	["@operator"] = { fg = colors.black },
 	["@parameter"] = { fg = colors.black, underline = true, nocombine = false },
 	["@property"] = { fg = colors.purple },
@@ -69,7 +70,7 @@ local highlightGroups = {
 	["@type"] = { fg = colors.black },
 	["@type.builtin"] = { fg = colors.blue },
 	["@type.qualifier"] = { fg = colors.blue },
-	["@variable"] = { fg = colors.black },
+	["@variable"] = { fg = colors.pale_teal },
 	["@variable.builtin"] = { fg = colors.blue },
 	Boolean = { fg = colors.blue },
 	cssUnitDecorator = { fg = colors.green }, -- for less
@@ -81,19 +82,25 @@ local highlightGroups = {
 	Delimiter = { fg = colors.black },
 	DiagnosticUnderlineError = { undercurl = true },
 	Function = { fg = colors.black },
-	Identifier = { fg = colors.purple }, -- for less
+	Identifier = { fg = colors.black },
+	Include = { fg = colors.blue },
+	Keyword = { fg = colors.blue },
 	Label = { fg = colors.purple },
-	lessDefinition = { fg = colors.blue },
 	lessAmpersand = { fg = colors.blue },
+	lessDefinition = { fg = colors.blue },
+	lessId = { fg = colors.blue },
+	lessVariable = { fg = colors.purple },
 	LineNr = { fg = colors.gray },
 	LspReferenceRead = { bg = colors.pale_blue },
 	LspReferenceText = { bg = colors.pale_blue },
 	LspReferenceWrite = { bg = colors.pink },
 	MatchParen = { bg = colors.teal, fg = colors.black },
 	Number = { fg = colors.sky },
-	PreProc = { bg = colors.blue }, -- for less
-	Statement = { bg = colors.blue },
+	Operator = { fg = colors.black }, -- for less
+	PreProc = { fg = colors.blue }, -- for less
+	Statement = { fg = colors.blue },
 	Search = { bg = colors.pale_blue },
+	Special = { fg = colors.blue },
 	StorageClass = { fg = colors.sky }, -- for less
 	Type = { fg = colors.blue }, -- for less
 }
