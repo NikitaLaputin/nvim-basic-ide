@@ -5,4 +5,5 @@ end
 
 treesitter_context.setup({
 	zindex = 50,
+	max_lines = 5,
 })
