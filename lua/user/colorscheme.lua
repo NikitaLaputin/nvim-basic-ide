@@ -17,6 +17,7 @@ local colors = {
 	sky = "#1750EB",
 	teal = "#93D9D9",
 	turquoise = "#20999D",
+    white = '#FFFFFF',
 }
 
 local highlightGroups = {
@@ -103,6 +104,7 @@ local highlightGroups = {
 	Special = { fg = colors.blue },
 	StorageClass = { fg = colors.sky }, -- for less
 	Type = { fg = colors.blue }, -- for less
+	TreesitterContext = { bg = colors.mint },
 }
 
 require("catppuccin").setup({
@@ -147,6 +149,7 @@ require("catppuccin").setup({
 		telescope = true,
 		notify = false,
 		mini = false,
+		lualine = false,
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
 })
@@ -155,3 +158,5 @@ require("catppuccin").setup({
 
 -- setup must be called before loading
 vim.cmd.colorscheme("catppuccin")
+
+return colors
