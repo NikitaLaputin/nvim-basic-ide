@@ -124,7 +124,7 @@ keymap("n", "gN", "<cmd>lua vim.diagnostic.goto_next({severity = { max = vim.dia
 keymap("n", "gP", "<cmd>lua vim.diagnostic.goto_prev({severity = { max = vim.diagnostic.severity.WARN}})<CR>", opts)
 
 -- Zen Mode
-keymap("n", "<leader>z", "<cmd>lua require('zen-mode').toggle({ window = { backdrop = 1, width = 140 } })<CR>", opts)
+keymap("n", "<leader>z", "<cmd>lua require('zen-mode').toggle({ window = { backdrop = 1, width = 150 } })<CR>", opts)
 
 -- Config reload
 keymap("n", "<leader>cr", "<cmd>lua ReloadConfig()<CR>", { noremap = true, silent = false })
