@@ -59,7 +59,7 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim" })
 	-- use { "lukas-reineke/indent-blankline.nvim" }
 	use({ "goolord/alpha-nvim" })
-	use { 'sindrets/diffview.nvim' } -- Diff viewer
+	use({ "sindrets/diffview.nvim" }) -- Diff viewer
 	use({ "gpanders/editorconfig.nvim" })
 	use({ "folke/zen-mode.nvim" })
 
