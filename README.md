@@ -136,12 +136,6 @@ local servers = {
 
 2. Manually install the binary of the lsp and put it in your path by downloading the binary or through your package manager. For terraform_lsp [example](https://github.com/juliosueiras/terraform-lsp/releases)
 
-### Formatters and linters
-
-Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/LunarVim/nvim-basic-ide/blob/0e65f504f634026f5765ce6a092612d385d6306d/lua/user/lsp/null-ls.lua#L12)
-
-**NOTE** Some are already setup as examples, remove them if you want
-
 ### Plugins
 
 You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-basic-ide/blob/0e65f504f634026f5765ce6a092612d385d6306d/lua/user/plugins.lua#L45)
@@ -178,7 +172,6 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
-- [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
