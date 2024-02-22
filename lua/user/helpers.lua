@@ -4,9 +4,7 @@ local getDiagnostics = function()
 	local diagnostics = vim.diagnostic.get(0)
 	local count = { 0, 0, 0, 0 }
 	for _, diagnostic in ipairs(diagnostics) do
-		if vim.startswith(vim.diagnostic.get_namespace(diagnostic.namespace).name, "vim.lsp") then
-			count[diagnostic.severity] = count[diagnostic.severity] + 1
-		end
+		count[diagnostic.severity] = count[diagnostic.severity] + 1
 	end
 
 	return count[vim.diagnostic.severity.ERROR],
@@ -33,8 +31,30 @@ end
 M.go_to_next_error = function()
 	go_to_error()
 end
+
 M.go_to_prev_error = function()
 	go_to_error(true)
+end
+
+local get_current_line_git_hash = function()
+	local location = vim.fn.expand("%")
+	local line = vim.api.nvim_win_get_cursor(0)[1]
+	local params = {
+		"log",
+		"-L",
+		line .. "," .. line .. ":" .. location,
+		"--pretty=oneline",
+		"--abbrev-commit",
+		"--no-patch",
+		"-1",
+	}
+	local command = vim.list_extend({ "git" }, params)
+	return vim.system(command, { text = true }):wait().stdout:gsub("%s.+", "")
+end
+
+M.open_line_commit_diff = function()
+	local commit = get_current_line_git_hash()
+	vim.cmd("DiffviewOpen " .. commit .. "^.." .. commit)
 end
 
 return M
