@@ -1,3 +1,4 @@
+local helpers = require "user.helpers"
 -- Shorten function name
 local keymap = vim.keymap.set
 -- Silent keymap option
@@ -88,6 +89,7 @@ keymap("n", "<leader>fp", ":Telescope pickers<CR>", opts)
 keymap("n", "<leader>fl", ":Telescope resume<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
+keymap("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>", opts)
 keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
 
 -- Git
@@ -99,6 +101,7 @@ keymap("n", "<leader>ga", "<cmd>:Gitsigns toggle_current_line_blame<CR>")
 keymap("n", "<leader>gh", "<cmd>:DiffviewOpen<CR>")
 keymap("n", "<leader>gc", "<cmd>:DiffviewClose<CR>")
 keymap("n", "<leader>gf", "<cmd>:DiffviewFileHistory %<CR>")
+keymap("n", "<leader>gl", "", { callback = helpers.open_line_commit_diff })
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
