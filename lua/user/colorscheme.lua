@@ -17,7 +17,7 @@ local colors = {
 	sky = "#1750EB",
 	teal = "#93D9D9",
 	turquoise = "#20999D",
-    white = '#FFFFFF',
+	white = "#FFFFFF",
 }
 
 local highlightGroups = {
@@ -34,6 +34,7 @@ local highlightGroups = {
 	["@function"] = { fg = colors.black, italic = true, nocombine = true },
 	["@function.builtin"] = { fg = colors.purple },
 	["@function.call"] = { fg = colors.black, italic = true },
+	["@function.method"] = { fg = colors.gold },
 	["@include"] = { fg = colors.blue },
 	["@keyword"] = { fg = colors.blue },
 	["@keyword.export"] = { fg = colors.blue },
@@ -69,26 +70,32 @@ local highlightGroups = {
 	["@string.escape"] = { fg = colors.black },
 	["@string.regex"] = { fg = colors.sky },
 	["@tag"] = { fg = colors.blue },
-	["@tag.attribute.tsx"] = { fg = colors.blue, nocombine = true },
+	["@tag.attribute.tsx"] = { fg = colors.sky },
 	["@tag.delimiter"] = { fg = colors.black },
 	["@type"] = { fg = colors.black },
 	["@type.builtin"] = { fg = colors.blue },
 	["@type.qualifier"] = { fg = colors.blue },
 	["@variable"] = { fg = colors.pale_teal },
 	["@variable.builtin"] = { fg = colors.blue },
+	["@variable.member"] = { fg = colors.purple },
+	["@variable.parameter"] = { fg = colors.black, underline = true },
 	Boolean = { fg = colors.blue },
 	cssUnitDecorator = { fg = colors.green }, -- for less
 	Comment = { fg = colors.dust, italic = true },
+	Conditional = { fg = colors.blue },
 	Constant = { fg = colors.blue }, -- for less
 	CursorLine = { bg = colors.mint },
 	CursorLineNr = { fg = colors.dark_gray },
 	CurSearch = { bg = colors.pale_blue, fg = "none" },
 	Delimiter = { fg = colors.black },
 	DiagnosticUnderlineError = { undercurl = true },
+	Exception = { fg = colors.blue },
 	Function = { fg = colors.black },
 	Identifier = { fg = colors.black },
 	Include = { fg = colors.blue },
 	Keyword = { fg = colors.blue },
+	javaScriptFunction = { fg = colors.blue },
+	javaScriptIdentifier = { fg = colors.blue },
 	Label = { fg = colors.purple },
 	lessAmpersand = { fg = colors.blue },
 	lessDefinition = { fg = colors.blue },
@@ -102,12 +109,14 @@ local highlightGroups = {
 	Number = { fg = colors.sky },
 	Operator = { fg = colors.black }, -- for less
 	PreProc = { fg = colors.blue }, -- for less
+	Repeat = { fg = colors.blue },
 	Statement = { fg = colors.blue },
 	Search = { bg = colors.pale_blue },
 	Special = { fg = colors.blue },
 	StorageClass = { fg = colors.sky }, -- for less
 	Type = { fg = colors.blue }, -- for less
 	TreesitterContext = { bg = colors.mint },
+	xmlTagName = { fg = colors.blue },
 }
 
 require("catppuccin").setup({
