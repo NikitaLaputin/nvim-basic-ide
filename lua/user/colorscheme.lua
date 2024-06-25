@@ -6,7 +6,7 @@ local colors = {
 	dust = "#8C8C8C",
 	gray = "#AEB3C2",
 	green = "#067D17",
-	gold = "#7A7A43",
+	gold = "#914C07",
 	light_gray = "#F7F8FA",
 	mint = "#F5F8FE",
 	pale_blue = "#EDEBFC",
@@ -35,6 +35,7 @@ local highlightGroups = {
 	["@function.builtin"] = { fg = colors.purple },
 	["@function.call"] = { fg = colors.black, italic = true },
 	["@function.method"] = { fg = colors.gold },
+	["@function.method.call"] = { fg = colors.gold },
 	["@include"] = { fg = colors.blue },
 	["@keyword"] = { fg = colors.blue },
 	["@keyword.export"] = { fg = colors.blue },
@@ -117,6 +118,10 @@ local highlightGroups = {
 	Type = { fg = colors.blue }, -- for less
 	TreesitterContext = { bg = colors.mint },
 	xmlTagName = { fg = colors.blue },
+
+    -- markup
+    ["@markup.italic"] = { italic = true },
+    ["@markup.strong"] = { bold = true }
 }
 
 require("catppuccin").setup({
