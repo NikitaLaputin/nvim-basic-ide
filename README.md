@@ -125,7 +125,7 @@ local servers = {
 	"lsp_lua",
 	"cssls",
 	"html",
-	"tsserver",
+	"ts_ls",
 	"pyright",
 	"bashls",
 	"jsonls",
