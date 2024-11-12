@@ -52,8 +52,11 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Other
+-- Better undo
 keymap("n", "U", "<C-r>", opts)
+
+-- Copy relative file name
+keymap("n", "<leader>cf", "<cmd>let @+= expand('%:.')<cr>")
 
 -- Surround with quotes and parenthesis
 keymap("n", "<leader>'", "viw\"zc'<ESC>\"zpa'<ESC>h", opts)
@@ -81,7 +84,7 @@ keymap("v", "<leader>]", '"zc[<ESC>"zpgv<ESC>a]<ESC>gvolol', opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+keymap("n", "<D-p>", ":lua require'telescope.builtin'.find_files({ hidden = true })<CR>", opts)
 keymap("n", "<leader>ft", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 keymap("v", "<leader>ft", ":lua require('telescope-live-grep-args.shortcuts').grep_visual_selection()<CR>")
 keymap("n", "<leader>fw", ":lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<CR>")
@@ -95,8 +98,8 @@ keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>gz", "<cmd>:Gitsigns reset_hunk<CR>")
-keymap("n", "<leader>gn", "<cmd>:Gitsigns next_hunk<CR>")
-keymap("n", "<leader>gp", "<cmd>:Gitsigns prev_hunk<CR>")
+keymap("n", "<leader>gn", "<cmd>:Gitsigns next_hunk<CR>", opts)
+keymap("n", "<leader>gp", "<cmd>:Gitsigns prev_hunk<CR>", opts)
 keymap("n", "<leader>ga", "<cmd>:Gitsigns toggle_current_line_blame<CR>")
 keymap("n", "<leader>gh", "<cmd>:DiffviewOpen<CR>")
 keymap("n", "<leader>gc", "<cmd>:DiffviewClose<CR>")
@@ -131,3 +134,25 @@ keymap("n", "<leader>z", "<cmd>lua require('zen-mode').toggle({ window = { backd
 
 -- Config reload
 keymap("n", "<leader>cr", "<cmd>lua ReloadConfig()<CR>", { noremap = true, silent = false })
+
+-- LSP
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
+keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "<leader>lf", "<cmd>lua require('conform').format()<cr>", opts)
+keymap("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
+keymap("n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
+keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+keymap("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
+keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+keymap("n", "<leader>jf", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "<leader>jd", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+keymap("n", "<leader>n", "", { callback = helpers.go_to_next_error })
+keymap("n", "<leader>p", "", { callback = helpers.go_to_prev_error })
