@@ -51,17 +51,16 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "kyazdani42/nvim-tree.lua" })
-	-- use { "akinsho/bufferline.nvim" }
 	use({ "moll/vim-bbye" })
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/toggleterm.nvim" })
 	use({ "ahmedkhalf/project.nvim" })
 	use({ "lewis6991/impatient.nvim" })
-	-- use { "lukas-reineke/indent-blankline.nvim" }
 	use({ "goolord/alpha-nvim" })
 	use({ "sindrets/diffview.nvim" }) -- Diff viewer
 	use({ "gpanders/editorconfig.nvim" })
 	use({ "folke/zen-mode.nvim" })
+	use({ "iamcco/markdown-preview.nvim" })
 
 	-- Colorschemes
 	use({ "projekt0n/github-nvim-theme" })
@@ -86,6 +85,7 @@ return packer.startup(function(use)
 	use({ "williamboman/mason-lspconfig.nvim" })
 	use({ "stevearc/conform.nvim" }) -- for formatters
 	use({ "RRethy/vim-illuminate" })
+	use({ "yioneko/nvim-vtsls" })
 
 	-- Telescope
 	use({
@@ -113,7 +113,7 @@ return packer.startup(function(use)
 	-- DAP
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
-	use({ "ravenxrz/DAPInstall.nvim" })
+	use({ "jay-babu/mason-nvim-dap.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
