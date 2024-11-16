@@ -37,8 +37,8 @@ keyset("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
 
 -- Use `[g` and `]g` to navigate diagnostics
 -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-keyset("n", "<leader>je", "<Plug>(coc-diagnostic-prev)", {silent = true})
-keyset("n", "<leader>jr", "<Plug>(coc-diagnostic-next)", {silent = true})
+keyset("n", "<leader>p", "<Plug>(coc-diagnostic-prev)", {silent = true})
+keyset("n", "<leader>n", "<Plug>(coc-diagnostic-next)", {silent = true})
 
 -- GoTo code navigation.
 -- keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
@@ -71,12 +71,11 @@ vim.api.nvim_create_autocmd("CursorHold", {
 
 
 -- Symbol renaming.
-keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
+keyset("n", "<leader>lr", "<Plug>(coc-rename)", {silent = true})
 
 
--- Formatting selected code.
-keyset("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
-keyset("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
+-- Formatting code.
+keyset("n", "<leader>lf", "<CMD>Format<CR>", {silent = true})
 
 
 -- Setup formatexpr specified filetype(s).
@@ -103,7 +102,7 @@ keyset("x", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 
 -- Remap keys for applying codeAction to the current buffer.
-keyset("n", "<leader>ac", "<Plug>(coc-codeaction)", opts)
+keyset("n", "<leader>jd", "<Plug>(coc-codeaction)", opts)
 
 
 -- Apply AutoFix to problem on the current line.
@@ -178,4 +177,4 @@ keyset("n", "<space>s", ":<C-u>CocList -I symbols<cr>", opts)
 -- Do default action for previous item.
 keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list.
-keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
+-- keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
