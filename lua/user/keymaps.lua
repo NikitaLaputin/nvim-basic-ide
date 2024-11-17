@@ -121,14 +121,6 @@ keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
--- LSP
-keymap("n", "<leader>jf", "<cmd>lua vim.diagnostic.open_float()<CR>")
-keymap("n", "<leader>jd", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-keymap("n", "<leader>n", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>", opts)
-keymap("n", "<leader>p", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>", opts)
-keymap("n", "gN", "<cmd>lua vim.diagnostic.goto_next({severity = { max = vim.diagnostic.severity.WARN}})<CR>", opts)
-keymap("n", "gP", "<cmd>lua vim.diagnostic.goto_prev({severity = { max = vim.diagnostic.severity.WARN}})<CR>", opts)
-
 -- Zen Mode
 keymap("n", "<leader>z", "<cmd>lua require('zen-mode').toggle({ window = { backdrop = 1, width = 150 } })<CR>", opts)
 
@@ -136,6 +128,8 @@ keymap("n", "<leader>z", "<cmd>lua require('zen-mode').toggle({ window = { backd
 keymap("n", "<leader>cr", "<cmd>lua ReloadConfig()<CR>", { noremap = true, silent = false })
 
 -- LSP
+keymap("n", "<leader>jf", "<cmd>lua vim.diagnostic.open_float()<CR>")
+keymap("n", "<leader>jd", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
