@@ -51,10 +51,11 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "kyazdani42/nvim-tree.lua" })
+    -- Close buffer
 	use({ "moll/vim-bbye" })
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/toggleterm.nvim" })
-	use({ "ahmedkhalf/project.nvim" })
+	-- use({ "ahmedkhalf/project.nvim" })
 	use({ "lewis6991/impatient.nvim" })
 	use({ "goolord/alpha-nvim" })
 	use({ "sindrets/diffview.nvim" }) -- Diff viewer
@@ -63,9 +64,9 @@ return packer.startup(function(use)
 	use({ "iamcco/markdown-preview.nvim" })
 
 	-- Colorschemes
-	use({ "projekt0n/github-nvim-theme" })
-	use({ "sainnhe/edge" })
-	use({ "navarasu/onedark.nvim" })
+	-- use({ "projekt0n/github-nvim-theme" })
+	-- use({ "sainnhe/edge" })
+	-- use({ "navarasu/onedark.nvim" })
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- cmp plugins
@@ -76,8 +77,8 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
 	-- snippets
-	use({ "L3MON4D3/LuaSnip" }) --snippet engine
-	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
+	-- use({ "L3MON4D3/LuaSnip" }) --snippet engine
+	-- use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP

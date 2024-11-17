@@ -93,7 +93,7 @@ keymap("n", "<leader>fl", ":Telescope resume<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>", opts)
-keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
+keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -138,7 +138,6 @@ keymap("n", "<leader>cr", "<cmd>lua ReloadConfig()<CR>", { noremap = true, silen
 -- LSP
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
-keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
