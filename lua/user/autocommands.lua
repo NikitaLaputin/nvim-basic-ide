@@ -38,16 +38,10 @@ vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
 	end,
 })
 
+-- Highlights copied text
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()
 		vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = { "*.java" },
-	callback = function()
-		vim.lsp.codelens.refresh()
 	end,
 })
 
@@ -65,4 +59,3 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 		end
 	end,
 })
-

@@ -49,7 +49,7 @@ return packer.startup(function(use)
 	use { "echasnovski/mini.nvim" } -- Autopairs
 	use({ "numToStr/Comment.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
-	use({ "kyazdani42/nvim-web-devicons" })
+    use({ "echasnovski/mini.icons" }) -- Icon provider
 	use({ "kyazdani42/nvim-tree.lua" })
 	use({ "moll/vim-bbye" }) -- Close buffer
 	use({ "nvim-lualine/lualine.nvim" })
@@ -63,29 +63,16 @@ return packer.startup(function(use)
 	use({ "iamcco/markdown-preview.nvim" })
 
 	-- Colorschemes
-	-- use({ "projekt0n/github-nvim-theme" })
-	-- use({ "sainnhe/edge" })
-	-- use({ "navarasu/onedark.nvim" })
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
-	-- cmp plugins
-	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-	use({ "hrsh7th/cmp-path" }) -- path completions
-	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-	use({ "hrsh7th/cmp-nvim-lsp" })
-	use({ "hrsh7th/cmp-nvim-lua" })
-	-- snippets
-	use({ "L3MON4D3/LuaSnip" }) --snippet engine
-	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
-
 	-- LSP
-	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 	use({ "williamboman/mason.nvim" })
-	use({ "williamboman/mason-lspconfig.nvim" })
 	use({ "stevearc/conform.nvim" }) -- for formatters
 	use({ "RRethy/vim-illuminate" })
 	use({ "yioneko/nvim-vtsls" })
+
+    -- Completion
+    use({ "echasnovski/mini.nvim" })
 
 	-- Telescope
 	use({
