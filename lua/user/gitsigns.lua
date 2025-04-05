@@ -10,6 +10,7 @@ gitsigns.setup {
     delete = { text = "►" },
     topdelete = { text = "►" },
     changedelete = { text = "▎" },
+    untracked = { text = "▎" },
   },
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
   watch_gitdir = {
