@@ -1,9 +1,9 @@
 return {
-    settings = {
-        typescript = {
-            tsserver = { 
-                maxTsServerMemory= 8092 
-            }
-        }
-    }
+	settings = {
+		typescript = {
+			tsserver = {
+				maxTsServerMemory = 8092,
+			},
+		},
+	},
 }
