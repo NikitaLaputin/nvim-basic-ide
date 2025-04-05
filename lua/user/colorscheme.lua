@@ -69,7 +69,7 @@ local highlightGroups = {
 	["@punctuation.delimiter"] = { fg = colors.black },
 	["@punctuation.special"] = { fg = colors.black },
 	["@string.escape"] = { fg = colors.black },
-	["@string.regex"] = { fg = colors.sky },
+	["@string.regexp"] = { fg = colors.sky },
 	["@tag"] = { fg = colors.blue },
 	["@tag.attribute.tsx"] = { fg = colors.sky },
 	["@tag.delimiter"] = { fg = colors.black },
