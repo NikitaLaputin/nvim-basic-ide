@@ -54,7 +54,7 @@ return packer.startup(function(use)
 	use({ "moll/vim-bbye" }) -- Close buffer
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/toggleterm.nvim" })
-	-- use({ "ahmedkhalf/project.nvim" })
+	use({ "ahmedkhalf/project.nvim" })
 	use({ "lewis6991/impatient.nvim" })
 	use({ "goolord/alpha-nvim" })
 	use({ "sindrets/diffview.nvim" }) -- Diff viewer
