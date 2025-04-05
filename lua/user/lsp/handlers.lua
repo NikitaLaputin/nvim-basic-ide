@@ -5,13 +5,11 @@ if not status_cmp_ok then
 	return
 end
 
-local helpers = require("user.helpers")
+-- local helpers = require("user.helpers")
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
-M.setup = function()
+local setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "󰅚 " },
 		{ name = "DiagnosticSignWarn", text = "󰀪 " },
@@ -68,4 +66,7 @@ M.on_attach = function(client, bufnr)
 	illuminate.on_attach(client)
 end
 
-return M
+return {
+    setup = setup,
+    capabilities = capabilities
+}
