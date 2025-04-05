@@ -51,8 +51,7 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "kyazdani42/nvim-tree.lua" })
-    -- Close buffer
-	use({ "moll/vim-bbye" })
+	use({ "moll/vim-bbye" }) -- Close buffer
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/toggleterm.nvim" })
 	-- use({ "ahmedkhalf/project.nvim" })
