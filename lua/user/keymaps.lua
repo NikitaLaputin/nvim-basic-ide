@@ -73,7 +73,7 @@ keymap("v", "<leader>(", '"zc(<ESC>"zpgv<ESC>a)<ESC>gvolol', opts)
 keymap("v", "<leader>)", '"zc(<ESC>"zpgv<ESC>a)<ESC>gvolol', opts)
 keymap("v", "<leader>{", '"zc{<ESC>"zpgv<ESC>a}<ESC>gvolol', opts)
 keymap("v", "<leader>}", '"zc{<ESC>"zpgv<ESC>a}<ESC>gvolol', opts)
-keymap("v", "<leader>[", '"zc[<ESC>"zpgv<ESC>a]<ESC>gvolol', opts)
+keymap("v", "<leader>[", '"zc[]<ESC>"zP<ESC>gvolol', opts)
 keymap("v", "<leader>]", '"zc[<ESC>"zpgv<ESC>a]<ESC>gvolol', opts)
 
 -------------
@@ -149,3 +149,10 @@ keymap("n", "<leader>jf", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 keymap("n", "<leader>jd", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 keymap("n", "<leader>n", "", { callback = helpers.go_to_next_error })
 keymap("n", "<leader>p", "", { callback = helpers.go_to_prev_error })
+
+
+-- Quickfix
+keymap("n", "<leader>cn", "<cmd>cnext<CR>", opts)
+keymap("n", "<leader>cp", "<cmd>cprev<CR>", opts)
+keymap("n", "<leader>co", "<cmd>copen<CR>", opts)
+keymap("n", "<leader>cc", "<cmd>cclose<CR>", opts)
