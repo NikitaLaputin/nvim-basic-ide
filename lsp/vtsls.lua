@@ -9,5 +9,6 @@ return {
 		"typescriptreact",
 		"typescript.tsx",
 	},
-	root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
+    -- resolve starting from the current directory
+    root_dir = vim.fs.root(vim.env.PWD, { "tsconfig.json", "jsconfig.json", "package.json", ".git" })
 }
