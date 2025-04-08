@@ -3,7 +3,6 @@ if not status_ok then
 	return
 end
 
-local actions = require("telescope.actions")
 local lga_actions = require("telescope-live-grep-args.actions")
 
 telescope.setup({
@@ -84,3 +83,6 @@ telescope.setup({
 		},
 	},
 })
+
+telescope.load_extension("live_grep_args")
+telescope.load_extension("fzf")
