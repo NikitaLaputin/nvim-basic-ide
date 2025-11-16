@@ -46,10 +46,10 @@ return packer.startup(function(use)
 	-- My plugins here
 	use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
 	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
-	use { "echasnovski/mini.nvim" } -- Autopairs
+	use({ "echasnovski/mini.nvim" }) -- Autopairs
 	use({ "numToStr/Comment.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
-    use({ "echasnovski/mini.icons" }) -- Icon provider
+	use({ "echasnovski/mini.icons" }) -- Icon provider
 	use({ "kyazdani42/nvim-tree.lua" })
 	use({ "moll/vim-bbye" }) -- Close buffer
 	use({ "nvim-lualine/lualine.nvim" })
@@ -71,8 +71,9 @@ return packer.startup(function(use)
 	use({ "RRethy/vim-illuminate" })
 	use({ "yioneko/nvim-vtsls" })
 
-    -- Completion
-    use({ "echasnovski/mini.nvim" })
+	-- Completion
+	use({ "saghen/blink.cmp" })
+	use({ "xzbdmw/colorful-menu.nvim" }) -- adds highlighting for autocomplete options
 
 	-- Telescope
 	use({
